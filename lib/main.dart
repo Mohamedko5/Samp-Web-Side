@@ -2,22 +2,36 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isDarkTheme = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SMAPO Dashboard',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      theme: _isDarkTheme ? ThemeData.dark() : ThemeData.light(),
+      home: DashboardPage(
+        onThemeChanged: (isDark) {
+          setState(() {
+            _isDarkTheme = isDark;
+          });
+        },
       ),
-      home: DashboardPage(),
     );
   }
 }
 
 class DashboardPage extends StatelessWidget {
+  final Function(bool) onThemeChanged;
+
+  DashboardPage({required this.onThemeChanged});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +44,21 @@ class DashboardPage extends StatelessWidget {
           ],
         ),
         actions: [
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
-          IconButton(icon: Icon(Icons.settings), onPressed: () {}),
-          IconButton(icon: Icon(Icons.account_circle), onPressed: () {}),
+          IconButton(
+            icon: Icon(Icons.notifications),
+            onPressed: () => _showNotificationDialog(context),
+          ),
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () => _showSettingsDialog(context),
+          ),
+          IconButton(
+            icon: Icon(Icons.account_circle),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => ProfilePage()),
+            ),
+          ),
         ],
       ),
       drawer: Drawer(
@@ -62,34 +88,18 @@ class DashboardPage extends StatelessWidget {
               leading: Icon(Icons.assignment),
               onTap: () {},
             ),
+            // Additional drawer items
             ListTile(
-              title: Text("Examination"),
-              leading: Icon(Icons.book),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Graduation"),
-              leading: Icon(Icons.school),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Student Account"),
-              leading: Icon(Icons.account_balance),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Others"),
-              leading: Icon(Icons.more_horiz),
-              onTap: () {},
+              title: Text("Profile"),
+              leading: Icon(Icons.account_circle),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProfilePage()),
+              ),
             ),
             ListTile(
               title: Text("Online Application"),
               leading: Icon(Icons.web),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Services"),
-              leading: Icon(Icons.local_activity),
               onTap: () {},
             ),
           ],
@@ -123,12 +133,6 @@ class DashboardPage extends StatelessWidget {
                     body:
                         'Sila rujuk notis makluman di pautan ini. Terima kasih.',
                   ),
-                  DashboardCard(
-                    title: 'HEBAHAN KEPUTUSAN MUET SESI 1 TAHUN 2025',
-                    date: '19 JUN 2025 09:09:26 AM',
-                    body:
-                        'Hebahan keputusan MUET Sesi 1 tahun 2025. [SILA KLIK DI SINI]',
-                  ),
                 ],
               ),
             ),
@@ -143,10 +147,59 @@ class DashboardPage extends StatelessWidget {
                 ElevatedButton(onPressed: () {}, child: Text('Logout')),
               ],
             ),
+            SizedBox(height: 10),
             Pagination(),
           ],
         ),
       ),
+    );
+  }
+
+  void _showNotificationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Notification'),
+          content: Text('You have new notifications!'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showSettingsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Settings'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SwitchListTile(
+                title: Text('Dark Theme'),
+                value: false,
+                onChanged: (value) {
+                  onThemeChanged(value);
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -196,6 +249,16 @@ class Pagination extends StatelessWidget {
         Text('1', style: TextStyle(fontSize: 18)),
         IconButton(icon: Icon(Icons.chevron_right), onPressed: () {}),
       ],
+    );
+  }
+}
+
+class ProfilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('User Profile')),
+      body: Center(child: Text('Profile Information here')),
     );
   }
 }
