@@ -6,6 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'SMAPO Dashboard',
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -160,7 +161,7 @@ class DashboardCard extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(date, style: TextStyle(color: Colors.grey)),
+            Text(date, style: TextStyle(color: Colors.white)),
             SizedBox(height: 5),
             Text(body),
           ],
