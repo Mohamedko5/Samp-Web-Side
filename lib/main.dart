@@ -132,6 +132,17 @@ class DashboardPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(onPressed: () {}, child: Text('Previous')),
+                ElevatedButton(onPressed: () {}, child: Text('Next')),
+                SizedBox(width: 10),
+                ElevatedButton(onPressed: () {}, child: Text('Refresh')),
+                ElevatedButton(onPressed: () {}, child: Text('Logout')),
+              ],
+            ),
             Pagination(),
           ],
         ),
