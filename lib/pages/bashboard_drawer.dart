@@ -17,6 +17,7 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
   bool isonlineExpanded = false;
   bool isserviceExpanded = false;
   bool isDashboardExpanded = false;
+  String expandedSection = '';
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -25,27 +26,30 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
         UserAccountsDrawerHeader(
           accountName: Text('Mohammed Zoalkeffl'),
           accountEmail: Text('AI240276 \nActive'),
-
           currentAccountPicture: CircleAvatar(
             backgroundColor: Colors.white,
             backgroundImage: AssetImage('assets/images/mohko.jpg'),
           ),
           decoration: BoxDecoration(color: Color(0xFFFF5722)),
         ),
+
+        // Biodata Section
         ListTile(
           leading: Icon(Icons.person),
           title: Text('Biodata'),
           trailing: Icon(
-            isBiodataExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Biodata'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isBiodataExpanded = !isBiodataExpanded;
+              expandedSection = expandedSection == 'Biodata' ? '' : 'Biodata';
             });
           },
         ),
-        if (isBiodataExpanded) ...[
+        if (expandedSection == 'Biodata') ...[
           ListTile(
             title: Text("Basic Info", style: TextStyle(fontSize: 10)),
             onTap: () {},
@@ -91,20 +95,26 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
             onTap: () {},
           ),
         ],
+
+        // Registration Section
         ListTile(
           leading: Icon(Icons.app_registration),
           title: Text('Registration'),
           trailing: Icon(
-            isRegistrationExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Registration'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isRegistrationExpanded = !isRegistrationExpanded;
+              expandedSection = expandedSection == 'Registration'
+                  ? ''
+                  : 'Registration';
             });
           },
         ),
-        if (isRegistrationExpanded) ...[
+        if (expandedSection == 'Registration') ...[
           ListTile(
             title: Text("Course Registration", style: TextStyle(fontSize: 10)),
             onTap: () {},
@@ -120,47 +130,58 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
           ListTile(
             leading: Icon(Icons.link),
             title: Text("Industrial Training", style: TextStyle(fontSize: 10)),
-
             onTap: () {},
           ),
         ],
+
+        // Exam Section
         ListTile(
           leading: Icon(Icons.bar_chart),
-          title: Text('Examniation'),
+          title: Text('Examination'),
           trailing: Icon(
-            isExamExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Examination'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isExamExpanded = !isExamExpanded;
+              expandedSection = expandedSection == 'Examination'
+                  ? ''
+                  : 'Examination';
             });
           },
         ),
-        if (isExamExpanded) ...[
+        if (expandedSection == 'Examination') ...[
           ListTile(
-            title: Text("Coures Perfomance", style: TextStyle(fontSize: 10)),
+            title: Text("Course Performance", style: TextStyle(fontSize: 10)),
             onTap: () {},
           ),
           ListTile(
-            title: Text("Examinaions Details", style: TextStyle(fontSize: 10)),
+            title: Text("Examination Details", style: TextStyle(fontSize: 10)),
             onTap: () {},
           ),
         ],
+
+        // Graduation Section
         ListTile(
           leading: Icon(Icons.school),
-          title: Text('Grauation'),
+          title: Text('Graduation'),
           trailing: Icon(
-            isGradExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Graduation'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isGradExpanded = !isGradExpanded;
+              expandedSection = expandedSection == 'Graduation'
+                  ? ''
+                  : 'Graduation';
             });
           },
         ),
-        if (isGradExpanded) ...[
+        if (expandedSection == 'Graduation') ...[
           ListTile(
             title: Text(
               "Graduation Audit Checklist",
@@ -169,39 +190,49 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
             onTap: () {},
           ),
         ],
+
+        // Student Account Section
         ListTile(
           leading: Icon(Icons.account_balance),
           title: Text('Student Account'),
           trailing: Icon(
-            isstudenAccountExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'StudentAccount'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isstudenAccountExpanded = !isstudenAccountExpanded;
+              expandedSection = expandedSection == 'StudentAccount'
+                  ? ''
+                  : 'StudentAccount';
             });
           },
         ),
-        if (isstudenAccountExpanded) ...[
+        if (expandedSection == 'StudentAccount') ...[
           ListTile(
             title: Text("Financial Statement", style: TextStyle(fontSize: 10)),
             onTap: () {},
           ),
         ],
+
+        // Other Section
         ListTile(
           leading: Icon(Icons.directions),
           title: Text('Others'),
           trailing: Icon(
-            isotherExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Others'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isotherExpanded = !isotherExpanded;
+              expandedSection = expandedSection == 'Others' ? '' : 'Others';
             });
           },
         ),
-        if (isotherExpanded) ...[
+        if (expandedSection == 'Others') ...[
           ListTile(
             title: Text(
               "Activities Transcript",
@@ -222,20 +253,26 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
             onTap: () {},
           ),
         ],
+
+        // Online Application Section
         ListTile(
           leading: Icon(Icons.edit),
           title: Text('Online Application'),
           trailing: Icon(
-            isonlineExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'OnlineApplication'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isonlineExpanded = !isonlineExpanded;
+              expandedSection = expandedSection == 'OnlineApplication'
+                  ? ''
+                  : 'OnlineApplication';
             });
           },
         ),
-        if (isonlineExpanded) ...[
+        if (expandedSection == 'OnlineApplication') ...[
           ListTile(
             title: Text(
               "Residential Electric Sticker",
@@ -268,20 +305,24 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
             onTap: () {},
           ),
         ],
+
+        // Services Section
         ListTile(
           leading: Icon(Icons.power),
           title: Text('Services'),
           trailing: Icon(
-            isserviceExpanded ? Icons.expand_more : Icons.arrow_back_ios,
+            expandedSection == 'Services'
+                ? Icons.expand_more
+                : Icons.arrow_back_ios,
             size: 15,
           ),
           onTap: () {
             setState(() {
-              isserviceExpanded = !isserviceExpanded;
+              expandedSection = expandedSection == 'Services' ? '' : 'Services';
             });
           },
         ),
-        if (isserviceExpanded) ...[
+        if (expandedSection == 'Services') ...[
           ListTile(
             leading: Icon(Icons.link),
             title: Text("ICT Info", style: TextStyle(fontSize: 10)),
