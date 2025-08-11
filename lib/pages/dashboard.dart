@@ -10,20 +10,34 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  bool isLeftMenuVisible = false; // Track if left menu is visible
+  bool isRightMenuVisible = false; // Track if right menu is visible
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(Icons.dashboard),
+            CircleAvatar(
+              backgroundImage: AssetImage("assets/images/download.png"),
+            ),
             SizedBox(width: 10),
             Text('MOHAMMED ZOALKEFL MOHAMMED HUSSEIN'),
           ],
         ),
         actions: [
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
-          IconButton(icon: Icon(Icons.settings), onPressed: () {}),
+          // Left menu toggle button
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              setState(() {
+                isRightMenuVisible = !isRightMenuVisible;
+              });
+            },
+          ),
+
+          IconButton(icon: Icon(Icons.logout), onPressed: () {}),
         ],
       ),
       drawer: Drawer(child: DashboardDrawer()),
