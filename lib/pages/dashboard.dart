@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/body_pages.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -17,7 +18,6 @@ class _DashboardState extends State<Dashboard> {
   bool isonlineExpanded = false;
   bool isserviceExpanded = false;
   bool isDashboardExpanded = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,6 @@ class _DashboardState extends State<Dashboard> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-
           children: [
             UserAccountsDrawerHeader(
               accountName: Text('Mohammed Zoalkeffl'),
@@ -150,8 +149,8 @@ class _DashboardState extends State<Dashboard> {
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.bar_chart),
+              title: Text('Examniation'),
               trailing: Icon(
                 isExamExpanded ? Icons.expand_more : Icons.arrow_back_ios,
                 size: 15,
@@ -164,13 +163,23 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isExamExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                title: Text(
+                  "Coures Perfomance",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  "Examinaions Details",
+                  style: TextStyle(fontSize: 10),
+                ),
                 onTap: () {},
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.school),
+              title: Text('Grauation'),
               trailing: Icon(
                 isGradExpanded ? Icons.expand_more : Icons.arrow_back_ios,
                 size: 15,
@@ -183,13 +192,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isGradExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                title: Text(
+                  "Graduation Audit Checklist",
+                  style: TextStyle(fontSize: 10),
+                ),
                 onTap: () {},
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.account_balance),
+              title: Text('Student Account'),
               trailing: Icon(
                 isstudenAccountExpanded
                     ? Icons.expand_more
@@ -204,13 +216,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isstudenAccountExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                title: Text(
+                  "Financial Statement",
+                  style: TextStyle(fontSize: 10),
+                ),
                 onTap: () {},
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.directions),
+              title: Text('Others'),
               trailing: Icon(
                 isotherExpanded ? Icons.expand_more : Icons.arrow_back_ios,
                 size: 15,
@@ -223,13 +238,31 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isotherExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                title: Text(
+                  "Activities Transcript",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  "Residential Record",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text("Vehicle Record", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text("UTHM iQR Reader", style: TextStyle(fontSize: 10)),
                 onTap: () {},
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.edit),
+              title: Text('Online Application'),
               trailing: Icon(
                 isonlineExpanded ? Icons.expand_more : Icons.arrow_back_ios,
                 size: 15,
@@ -242,13 +275,40 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isonlineExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                title: Text(
+                  "Residential Electric Sticker",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  "Admission Application",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  "Confirmation Letter Application",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text("Counselling", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text("GL Application", style: TextStyle(fontSize: 10)),
                 onTap: () {},
               ),
             ],
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Home'),
+              leading: Icon(Icons.power),
+              title: Text('Services'),
               trailing: Icon(
                 isserviceExpanded ? Icons.expand_more : Icons.arrow_back_ios,
                 size: 15,
@@ -261,14 +321,46 @@ class _DashboardState extends State<Dashboard> {
             ),
             if (isserviceExpanded) ...[
               ListTile(
-                title: Text("Basic Info", style: TextStyle(fontSize: 10)),
+                leading: Icon(Icons.link),
+                title: Text("ICT Info", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text("Ezproxy Journal", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text("PTTA e-Resources", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text(
+                  "UTHM Bus Tracking",
+                  style: TextStyle(fontSize: 10),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text("WIFI@UTHM", style: TextStyle(fontSize: 10)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.link),
+                title: Text(
+                  "Software Downloads",
+                  style: TextStyle(fontSize: 10),
+                ),
                 onTap: () {},
               ),
             ],
           ],
         ),
       ),
-      body: Center(child: Text('Welcome to the Dashboard!')),
+      body: BodyPages(),
     );
   }
 }
