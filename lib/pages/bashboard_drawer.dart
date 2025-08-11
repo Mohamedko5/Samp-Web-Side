@@ -8,15 +8,6 @@ class DashboardDrawer extends StatefulWidget {
 }
 
 class _DashboardDrawerState extends State<DashboardDrawer> {
-  bool isBiodataExpanded = false;
-  bool isRegistrationExpanded = false;
-  bool isExamExpanded = false;
-  bool isGradExpanded = false;
-  bool isstudenAccountExpanded = false;
-  bool isotherExpanded = false;
-  bool isonlineExpanded = false;
-  bool isserviceExpanded = false;
-  bool isDashboardExpanded = false;
   String expandedSection = '';
   @override
   Widget build(BuildContext context) {
