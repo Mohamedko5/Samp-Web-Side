@@ -7,6 +7,10 @@ import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/covid_19_sataus.da
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/face_recognition.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/files_repository.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/passport_visa_info.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/course_reg.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/credit_exemptio_reg.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/eproject_online_reg.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/industrial_training_reg.dart';
 
 class DashboardDrawer extends StatefulWidget {
   const DashboardDrawer({super.key});
@@ -156,20 +160,42 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
         if (expandedSection == 'Registration') ...[
           ListTile(
             title: Text("Course Registration", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CourseReg()),
+              );
+            },
           ),
           ListTile(
             title: Text("Credit Exemption", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CreditExemptioReg()),
+              );
+            },
           ),
           ListTile(
             title: Text("eProject Online", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EprojectOnlineReg()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.link),
             title: Text("Industrial Training", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => IndustrialTrainingReg(),
+                ),
+              );
+            },
           ),
         ],
 

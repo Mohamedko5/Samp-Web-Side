@@ -10,6 +10,6 @@ class CourseReg extends StatefulWidget {
 class _CourseRegState extends State<CourseReg> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("data")));
+    return Scaffold(appBar: AppBar(title: Text("Course Registration")));
   }
 }
