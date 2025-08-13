@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class FaceRecognition extends StatefulWidget {
   const FaceRecognition({super.key});
@@ -10,6 +11,9 @@ class FaceRecognition extends StatefulWidget {
 class _FaceRecognitionState extends State<FaceRecognition> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Face Repository")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Face Repository")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

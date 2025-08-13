@@ -10,6 +10,6 @@ class SoftwareDownloads extends StatefulWidget {
 class _SoftwareDownloadsState extends State<SoftwareDownloads> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(appBar: AppBar(title: Text("Software Downloads")));
   }
 }

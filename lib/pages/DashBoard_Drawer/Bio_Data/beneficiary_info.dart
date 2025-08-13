@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class BeneficiaryInfo extends StatefulWidget {
   const BeneficiaryInfo({super.key});
@@ -10,6 +11,9 @@ class BeneficiaryInfo extends StatefulWidget {
 class _BeneficiaryInfoState extends State<BeneficiaryInfo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Beneficiary Info ")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Beneficiary Info ")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

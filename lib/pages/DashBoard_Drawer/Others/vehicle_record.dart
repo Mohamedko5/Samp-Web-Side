@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class VehicleRecord extends StatefulWidget {
   const VehicleRecord({super.key});
@@ -10,6 +11,9 @@ class VehicleRecord extends StatefulWidget {
 class _VehicleRecordState extends State<VehicleRecord> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Vehicle Record")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Vehicle Record")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

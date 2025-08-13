@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class EprojectOnlineReg extends StatefulWidget {
   const EprojectOnlineReg({super.key});
@@ -10,6 +11,9 @@ class EprojectOnlineReg extends StatefulWidget {
 class _EprojectOnlineRegState extends State<EprojectOnlineReg> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("eProject Online")));
+    return Scaffold(
+      appBar: AppBar(title: Text("eProject Online")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

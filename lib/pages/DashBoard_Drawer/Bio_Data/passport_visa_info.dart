@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class PassportVisaInfo extends StatefulWidget {
   const PassportVisaInfo({super.key});
@@ -10,6 +11,9 @@ class PassportVisaInfo extends StatefulWidget {
 class _PassportVisaInfoState extends State<PassportVisaInfo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Passport  and Visa Info ")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Passport  and Visa Info ")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

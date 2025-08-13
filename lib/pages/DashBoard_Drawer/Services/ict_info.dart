@@ -10,6 +10,6 @@ class IctInfo extends StatefulWidget {
 class _IctInfoState extends State<IctInfo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(appBar: AppBar(title: Text("ICT Info")));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class BankInfo extends StatefulWidget {
   const BankInfo({super.key});
@@ -10,6 +11,9 @@ class BankInfo extends StatefulWidget {
 class _BankInfoState extends State<BankInfo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Sponsoship and Bank info")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Sponsoship and Bank info")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }

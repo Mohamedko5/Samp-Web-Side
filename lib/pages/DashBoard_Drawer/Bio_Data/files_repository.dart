@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/bashboard_drawer.dart';
 
 class FilesRepository extends StatefulWidget {
   const FilesRepository({super.key});
@@ -10,6 +11,9 @@ class FilesRepository extends StatefulWidget {
 class _FilesRepositoryState extends State<FilesRepository> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Files Recognition")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Files Recognition")),
+      drawer: Drawer(child: DashboardDrawer()),
+    );
   }
 }
