@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/address.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/bank_info.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/basic_info.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/beneficiary_info.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/covid_19_sataus.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/face_recognition.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/files_repository.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/passport_visa_info.dart';
 
 class DashboardDrawer extends StatefulWidget {
   const DashboardDrawer({super.key});
@@ -43,47 +51,87 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
         if (expandedSection == 'Biodata') ...[
           ListTile(
             title: Text("Basic Info", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BasicInfo()),
+              );
+            },
           ),
           ListTile(
             title: Text("Beneficiary Info", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BeneficiaryInfo()),
+              );
+            },
           ),
           ListTile(
             title: Text(
               "Address and Contact Info",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Address()),
+              );
+            },
           ),
           ListTile(
             title: Text(
               "Sponsorship and Bank Info",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BankInfo()),
+              );
+            },
           ),
           ListTile(
             title: Text(
               "Passport and Visa Info",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PassportVisaInfo()),
+              );
+            },
           ),
           ListTile(
             title: Text(
               "COVID-19 Vaccination Status",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Covid19Sataus()),
+              );
+            },
           ),
           ListTile(
             title: Text("Files Repository", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FilesRepository()),
+              );
+            },
           ),
           ListTile(
             title: Text("Face Recognition", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FaceRecognition()),
+              );
+            },
           ),
         ],
 

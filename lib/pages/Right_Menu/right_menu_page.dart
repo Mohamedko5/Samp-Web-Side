@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smap_web_side/pages/right_menu_contact_us.dart';
-import 'package:smap_web_side/pages/right_menu_noifications.dart';
-import 'package:smap_web_side/pages/right_menu_system_status.dart';
-import 'package:smap_web_side/pages/right_menu_uthm_links.dart';
-import 'package:smap_web_side/pages/right_menu_uthm_qr.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_contact_us.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_noifications.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_system_status.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_uthm_links.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_uthm_qr.dart';
 
 class RightMenuPage extends StatefulWidget {
   const RightMenuPage({super.key});
