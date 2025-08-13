@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smap_web_side/pages/bashboard_drawer.dart';
 import 'package:smap_web_side/pages/body_pages.dart';
-import 'package:smap_web_side/pages/right_menu_page.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_page.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -18,6 +18,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Row(
           children: [
             CircleAvatar(

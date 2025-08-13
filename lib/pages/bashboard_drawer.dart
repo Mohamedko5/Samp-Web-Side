@@ -7,10 +7,19 @@ import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/covid_19_sataus.da
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/face_recognition.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/files_repository.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Bio_Data/passport_visa_info.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Examination/course_performance_exm.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Examination/examintation_details.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Graduation/Graduation_audit_checklist_grad.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Others/activites_transcript.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Others/residential_record.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Others/vehicle_record.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/course_reg.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/credit_exemptio_reg.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/eproject_online_reg.dart';
 import 'package:smap_web_side/pages/DashBoard_Drawer/Registration/industrial_training_reg.dart';
+import 'package:smap_web_side/pages/DashBoard_Drawer/Student_Account/financial_statemetn.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_uthm_links.dart';
+import 'package:smap_web_side/pages/Right_Menu/right_menu_uthm_qr.dart';
 
 class DashboardDrawer extends StatefulWidget {
   const DashboardDrawer({super.key});
@@ -220,11 +229,21 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
         if (expandedSection == 'Examination') ...[
           ListTile(
             title: Text("Course Performance", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CoursePerformanceExm()),
+              );
+            },
           ),
           ListTile(
             title: Text("Examination Details", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ExamintationDetails()),
+              );
+            },
           ),
         ],
 
@@ -252,7 +271,14 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
               "Graduation Audit Checklist",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GraduationAuditChecklistGrad(),
+                ),
+              );
+            },
           ),
         ],
 
@@ -277,7 +303,12 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
         if (expandedSection == 'StudentAccount') ...[
           ListTile(
             title: Text("Financial Statement", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FinancialStatemetn()),
+              );
+            },
           ),
         ],
 
@@ -303,19 +334,39 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
               "Activities Transcript",
               style: TextStyle(fontSize: 10),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ActivitesTranscript()),
+              );
+            },
           ),
           ListTile(
             title: Text("Residential Record", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ResidentialRecord()),
+              );
+            },
           ),
           ListTile(
             title: Text("Vehicle Record", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VehicleRecord()),
+              );
+            },
           ),
           ListTile(
             title: Text("UTHM iQR Reader", style: TextStyle(fontSize: 10)),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UthmQR()),
+              );
+            },
           ),
         ],
 

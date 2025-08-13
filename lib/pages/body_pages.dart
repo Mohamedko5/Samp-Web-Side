@@ -12,6 +12,6 @@ class _BodyPagesState extends State<BodyPages> {
   bool isRightMenuVisible = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(backgroundColor: Colors.white);
   }
 }
