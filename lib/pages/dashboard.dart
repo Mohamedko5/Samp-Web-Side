@@ -45,7 +45,7 @@ class _DashboardState extends State<Dashboard> {
       drawer: Drawer(child: DashboardDrawer()),
       body: Row(
         children: [
-          Expanded(child: BodyPages()),
+          Expanded(child: SingleChildScrollView(child: BodyPages())),
 
           if (isRightMenuVisible) RightMenuPage(),
         ],
